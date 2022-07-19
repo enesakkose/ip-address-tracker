@@ -1,29 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Header.scss'
 import Arrow from '../assets/images/icon-arrow.svg'
 
-function Header() {
-    const [ handleClick, setHandleClick ] = useState(false)
-    const [ search, setSearch ] = useState('')
-    const [ ipData, setIpData ] = useState(null)
-    const [isLoading, setIsLoading] = useState(false)
-    
-    useEffect(() => {
-        const ipAddressData = async() => {
-            setIsLoading(true)
-            const response = await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_ya3xiPnhHgVWdac15IaDY3VYEK9kY&ipAddress=${search}`)
-            const data = await response.json()
-            .catch(error => console.log(error))
-            setIsLoading(false) 
-            setIpData(data)
-            setSearch('')     
-        }
-        ipAddressData()
-
-        return () => {
-            setHandleClick(false)
-        }
-    }, [handleClick])
+function Header({ipData,  setHandleClick, search, setSearch, isLoading}) {
 
 
     const handleSubmit = (e) => {
