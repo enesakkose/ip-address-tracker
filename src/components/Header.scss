@@ -1,0 +1,64 @@
+.header{
+    background: url('../assets/images/pattern-bg.png') no-repeat  center / cover; 
+    padding: $PXL;
+
+    &__title{
+        text-align: center;
+        color: $white;
+    }
+
+    &__input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $PL 0 $PXXL;
+
+        input{
+            width: 25%;
+            padding: $PL;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        &__btn{
+            padding: $PL;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            background-color: $darkGray
+        }
+    }
+
+    &__info{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 0 auto;
+        padding: $PXXL $PM;
+        width: 60%;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+        h6{
+            color: $veryDarkGray;
+        }
+
+        span{
+            font-weight: 500;
+        }
+        div{
+            padding: 0 $PXXL;
+            border-right: 1px solid $lightGray;
+
+            &:last-child{
+                border: none;
+            }
+        }
+    }
+
+    &__loading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+    }
+}
