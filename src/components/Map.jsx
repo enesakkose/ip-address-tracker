@@ -12,8 +12,8 @@ function Map({ipData}) {
   const API_KEY = import.meta.env.VITE_REACT_APP_MAP_API_KEY
 
   const center = {
-  lat: ipData?.location?.lat || 38.123,
-  lng: ipData?.location?.lng || 7.123
+  lat: ipData?.location?.lat || 0,
+  lng: ipData?.location?.lng || 0
   };  
 
 
@@ -30,7 +30,7 @@ function Map({ipData}) {
           icon={Location}
         />
       </GoogleMapReact>
-  </div>
+    </div>
   )
 }
 
