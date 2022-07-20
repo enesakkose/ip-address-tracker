@@ -18,6 +18,10 @@
             padding: $PL;
             border-top-left-radius: 10px;
             border-bottom-left-radius: 10px;
+
+            @media (max-width: 415px) {
+                width: 50%;
+            }
         }
 
         &__btn{
@@ -38,6 +42,12 @@
         border-radius: 10px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+        @media (max-width: 415px) {
+            grid-template-columns: 1fr;
+            text-align: center;
+            place-content: center;
+        }
+
         h6{
             color: $veryDarkGray;
         }
@@ -49,8 +59,12 @@
             padding: 0 $PXXL;
             border-right: 1px solid $lightGray;
 
+            @media (max-width: 415px) {
+                border-right: none;
+            }
+
             &:last-child{
-                border: none;
+                border-right: none;
             }
         }
     }

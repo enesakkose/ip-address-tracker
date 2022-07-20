@@ -1,13 +1,11 @@
 import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import { Marker } from '@react-google-maps/api'
-
-const containerStyle = {
-  width: '100%',
-  height: '100%'
-};
+import GoogleMapReact from 'google-map-react';
+import Location from '../assets/images/icon-location.svg'
 
 
+const AnyReactComponent = ({ icon }) => <div>
+  <img src={icon} alt="" />
+</div>;
 
 function Map({ipData}) {
   
@@ -18,25 +16,20 @@ function Map({ipData}) {
   lng: ipData?.location?.lng || 7.123
   };  
 
+
   return (
     <div className="map">
-        <LoadScript
-        googleMapsApiKey={API_KEY}
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: API_KEY }}
+        center={center}
+        defaultZoom={14}
       >
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={10}
-        >
-         <Marker
-            key='marker_2'
-            position={center} 
+        <AnyReactComponent
+          lat={center.lat}
+          lng={center.lng}
+          icon={Location}
         />
-            
-        
-          <></>
-        </GoogleMap>
-      </LoadScript>
+      </GoogleMapReact>
   </div>
   )
 }
